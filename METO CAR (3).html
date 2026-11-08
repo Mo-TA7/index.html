@@ -1,264 +1,233 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>METO CAR</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONA LMS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#f3f5f8;--card:#fff;--tx:#13202e;--mut:#5d6b7b;--bd:#dfe4ea;--hero:#0a2540;--acc:#ffb000;--oa:#2b1d00;--ok:#0f7a4a;--bad:#b42318;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1522;--card:#13233a;--tx:#e8eef6;--mut:#9fb0c3;--bd:#25405f;--hero:#0d2a4a;--ok:#4ade80;--bad:#ff8a80;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0b1522;--card:#13233a;--tx:#e8eef6;--mut:#9fb0c3;--bd:#25405f;--hero:#0d2a4a;--ok:#4ade80;--bad:#ff8a80;color-scheme:dark}
-*{box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 Cairo,"Segoe UI",Tahoma,Arial,sans-serif}
-:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-header{background:var(--hero);color:#fff}
-.bar{max-width:1040px;margin:auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
-.plate{background:var(--acc);color:var(--oa);width:34px;height:34px;border-radius:8px;display:grid;place-items:center}
-.seg,.tabs{display:flex;background:rgba(255,255,255,.12);border-radius:10px;padding:3px}
-.seg button,.tabs button{background:none;border:0;color:#fff;font:inherit;font-size:14px;padding:3px 12px;border-radius:8px;cursor:pointer}
-.seg .on,.tabs .on{background:var(--acc);color:var(--oa);font-weight:700}
-.hero{background:var(--hero);color:#fff;position:relative;padding:20px 16px 44px}
-.hero:after{content:"";position:absolute;inset:auto 0 0;height:5px;background:repeating-linear-gradient(90deg,var(--acc) 0 28px,transparent 28px 56px)}
-.in{max-width:1040px;margin:auto}
-.hero h1{margin:0 0 6px;font-size:clamp(28px,6vw,46px);line-height:1.25;font-weight:800;max-width:14em}
-.hero p{margin:0 0 16px;color:#c3d1e3;max-width:36em}
-.cta{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.b2{border:1.5px solid #fff;color:#fff;text-decoration:none;padding:5px 16px;border-radius:10px;font-weight:600;font-size:15px}
-.find{background:var(--card);color:var(--tx);border-radius:14px;padding:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-.find label{display:grid;gap:2px;font-size:13px;color:var(--mut);font-weight:600}
-main{max-width:1040px;margin:auto;padding:20px 16px 40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
-.car{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
-.ph{height:150px;background:var(--bd);display:grid;place-items:center;position:relative;color:var(--mut)}
-.ph img{width:100%;height:100%;object-fit:cover}
-.pt{position:absolute;inset-block-start:10px;inset-inline-start:10px;background:var(--acc);color:var(--oa);font-weight:800;padding:1px 10px;border-radius:8px;font-size:14px}
-.bd{padding:14px}.bd h3{margin:0 0 6px;font-size:18px}
-.chip{display:inline-block;border:1px solid var(--bd);border-radius:99px;padding:0 10px;font-size:13px;margin-inline-end:6px;color:var(--mut)}
-.ft{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}
-.st{font-weight:700;font-size:14px}.st:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-inline-end:6px}
-.g{color:var(--ok)}.r{color:var(--bad)}.bad{color:var(--bad)}.ok{color:var(--ok)}
-.mut{color:var(--mut);font-size:14px}
-.btn{background:var(--acc);color:var(--oa);border:0;border-radius:10px;padding:8px 16px;font:inherit;font-weight:700;cursor:pointer}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-.btn.o{background:none;color:var(--tx);border:1px solid var(--bd);padding:3px 10px;font-weight:400;font-size:14px}
-.btn.d{color:var(--bad);border-color:var(--bad)}
-input,select{font:inherit;padding:8px 10px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);min-width:0;width:100%}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.row>*{flex:1 1 130px}.row>.btn{flex:0 0 auto}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:8px}
-.stats b{display:block;font-size:26px}
-h2{font-size:20px;margin:24px 0 10px}
-.fr{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.fr img{width:48px;height:36px;object-fit:cover;border-radius:6px;vertical-align:middle;margin-inline-end:8px}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:20}
-.wm{font-weight:800;font-size:15px;letter-spacing:.35em;color:var(--acc);margin-bottom:6px}
-.num{direction:ltr;unicode-bidi:isolate;font-weight:700}
-.fo{max-width:1040px;margin:auto;padding:16px;border-top:1px solid var(--bd);color:var(--mut);font-size:14px;display:grid;gap:4px}
-.lb{display:grid;gap:2px;font-size:13px;color:var(--mut)}
-.wb{background:var(--card);border:1.5px solid var(--acc);border-radius:14px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.modal.show{display:flex}.modal .card{width:100%;max-width:400px}.modal input{margin:6px 0}
+:root{
+--primary:#2563EB;
+--secondary:#7C3AED;
+--success:#22C55E;
+--danger:#EF4444;
+--dark:#0F172A;
+--gray:#64748B;
+--light:#F8FAFC;
+--white:#FFFFFF;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+background:#f5f7fb;
+}
+
+.container{
+display:flex;
+min-height:100vh;
+}
+
+.sidebar{
+width:260px;
+background:linear-gradient(180deg,var(--primary),var(--secondary));
+color:white;
+padding:25px;
+}
+
+.logo{
+font-size:32px;
+font-weight:700;
+margin-bottom:30px;
+text-align:center;
+}
+
+.menu{
+list-style:none;
+}
+
+.menu li{
+padding:14px;
+border-radius:12px;
+margin-bottom:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.menu li:hover{
+background:rgba(255,255,255,.15);
+}
+
+.main{
+flex:1;
+padding:25px;
+}
+
+.topbar{
+background:white;
+padding:15px 20px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 4px 20px rgba(0,0,0,.06);
+margin-bottom:25px;
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.avatar{
+width:40px;
+height:40px;
+background:var(--primary);
+border-radius:50%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:25px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+
+.card h4{
+color:var(--gray);
+margin-bottom:10px;
+}
+
+.card .number{
+font-size:28px;
+font-weight:bold;
+color:var(--dark);
+}
+
+.content-grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+.panel{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+
+.panel h3{
+margin-bottom:20px;
+color:var(--dark);
+}
+
+.student{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid #eee;
+}
+
+.status-paid{
+color:var(--success);
+font-weight:bold;
+}
+
+.status-late{
+color:var(--danger);
+font-weight:bold;
+}
+
+.chart{
+height:280px;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+gap:12px;
+}
+
+.bar{
+width:50px;
+background:linear-gradient(var(--primary),var(--secondary));
+border-radius:12px 12px 0 0;
+}
+
+.bar:nth-child(1){height:120px;}
+.bar:nth-child(2){height:200px;}
+.bar:nth-child(3){height:180px;}
+.bar:nth-child(4){height:240px;}
+.bar:nth-child(5){height:170px;}
+.bar:nth-child(6){height:260px;}
+
+.mobile-header{
+display:none;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+display:none;
+}
+
+.container{
+display:block;
+}
+
+.mobile-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+color:white;
+}
+
+.content-grid{
+grid-template-columns:1fr;
+}
+
+.main{
+padding:15px;
+}
+}
 </style>
 </head>
+
 <body>
-<header><div class="bar">
-  <div class="brand"><span class="plate">M</span>METO CAR</div>
-  <div class="seg" id="lg"><button onclick="setLang(0)">ع</button><button onclick="setLang(1)">EN</button><button onclick="setLang(2)">TR</button></div>
-  <div class="tabs"><button id="tc" onclick="tab('c')" data-i="cu"></button><button id="ta" onclick="tab('a')" data-i="ad"></button></div>
-</div></header>
-<section class="hero" id="hero"><div class="in">
-  <div class="wm">METO CAR</div><h1 data-i="hh"></h1><p data-i="hp"></p>
-  <div class="cta"><a class="b2" href="tel:+201285977851" data-i="call"></a><a class="b2" id="wa" target="_blank" rel="noopener" data-i="wa0"></a><span class="num" style="align-self:center">+20 12 85977851</span></div>
-  <div class="find">
-    <label><span data-i="pick"></span><input id="df" type="date" onchange="rc()"></label>
-    <label><span data-i="ret"></span><input id="dt" type="date" onchange="rc()"></label>
-    <label><span data-i="sv_l"></span><select id="sv" onchange="rc()"><option value="self" data-i="m_self"></option><option value="driver" data-i="m_driver"></option><option value="wedding" data-i="m_wedding"></option></select></label>
-    <label><span data-i="srch"></span><input id="q" data-p="sph" oninput="rc()"></label>
-  </div>
-</div></section>
-<main><section id="cust"><div class="wb" id="wb"><div><b data-i="wb_h"></b><div class="mut"><span data-i="wb_p"></span> <b id="wbp"></b></div></div><button class="btn" onclick="$('sv').value='wedding';rc()" data-i="wb_b"></button></div><div id="cars" class="grid"></div></section><section id="admin" hidden></section></main>
-<footer class="fo"><b>METO CAR</b><div><b data-i="pay_h"></b>: <span data-i="pay_p"></span> <b class="num">+20 12 85977851</b></div></footer>
-<div id="modal" class="modal"><div class="card" id="mbox"></div></div>
 
-<script>
-var K='metoCar2',PIN='1234',PH='201285977851',L=0,cur='c',unlocked=false,sel=null,S,
-ST=['new','confirmed','out','returned','cancelled'],
-CAR='<svg viewBox="0 0 120 50" width="130" fill="currentColor" aria-hidden="true"><path d="M8 34l6-12c2-4 5-6 10-6h14c4-6 9-9 16-9h12c6 0 11 3 15 9l9 3c8 1 14 4 14 10v5H8z"/><circle cx="32" cy="38" r="7" stroke="var(--bd)" stroke-width="3"/><circle cx="92" cy="38" r="7" stroke="var(--bd)" stroke-width="3"/></svg>',
-T={
-cu:["العملاء","Customers","Müşteri"],ad:["الإدارة","Admin","Yönetim"],
-hh:["سيارتك جاهزة في دقائق","Your car, ready in minutes","Aracınız dakikalar içinde hazır"],
-hp:["إيجار يومي بأسعار واضحة وحجز مباشر على واتساب","Daily rentals, clear prices, direct WhatsApp booking","Net fiyatlar, günlük kiralama, WhatsApp ile doğrudan rezervasyon"],
-call:["اتصل بنا","Call us","Bizi arayın"],wa0:["واتساب","WhatsApp","WhatsApp"],
-pick:["الاستلام","Pick-up","Teslim alma"],ret:["التسليم","Return","İade"],
-srch:["ابحث","Search","Ara"],sph:["الاسم أو النوع","Name or type","Ad veya tür"],
-pd:["/ يوم","/ day","/ gün"],total:["الإجمالي","Total","Toplam"],
-avail:["متاحة","Available","Müsait"],busy:["محجوزة","Booked","Dolu"],maint:["في الصيانة","In service","Bakımda"],
-book:["احجز الآن","Book now","Rezervasyon"],none:["لا توجد سيارات","No cars found","Araç bulunamadı"],
-name:["الاسم بالكامل","Full name","Ad soyad"],phone:["رقم الموبايل","Mobile number","Telefon numarası"],
-confirm:["تأكيد الحجز","Confirm booking","Rezervasyonu onayla"],cancel:["إلغاء","Cancel","İptal"],
-e_form:["اكتب الاسم ورقم موبايل صحيح","Enter your name and a valid mobile number","Adınızı ve geçerli bir telefon girin"],
-e_taken:["السيارة اتحجزت في الفترة دي","This car was just booked for these dates","Bu araç bu tarihlerde dolu"],
-e_dates:["اختر تواريخ صحيحة","Choose valid dates","Geçerli tarih seçin"],
-dh:["تم تسجيل الحجز","Booking received","Rezervasyon alındı"],
-dp:["هيتواصل معاك المكتب لتأكيد الحجز","Our office will contact you to confirm","Ofisimiz onay için sizi arayacak"],
-wa:["أرسل التفاصيل على واتساب","Send details on WhatsApp","Ayrıntıları WhatsApp'tan gönder"],ok:["تمام","Done","Tamam"],
-pin_h:["دخول الإدارة","Admin sign-in","Yönetici girişi"],pin:["الرقم السري","PIN","PIN"],enter:["دخول","Sign in","Giriş"],
-pin_e:["الرقم السري غلط","Wrong PIN","Yanlış PIN"],
-s_cars:["سيارات","Cars","Araç"],s_out:["عند العملاء","On rent","Kirada"],s_act:["حجوزات نشطة","Active bookings","Aktif rezervasyon"],s_rev:["الإيراد","Revenue","Gelir"],
-bk:["الحجوزات","Bookings","Rezervasyonlar"],addb:["إضافة حجز","Add booking","Rezervasyon ekle"],nob:["لا توجد حجوزات بعد","No bookings yet","Henüz rezervasyon yok"],
-cn:["اسم العميل","Customer name","Müşteri adı"],fill:["أكمل البيانات والتواريخ","Complete the details and dates","Bilgileri ve tarihleri tamamlayın"],
-fleet:["السيارات","Fleet","Araçlar"],add:["إضافة","Add","Ekle"],carn:["اسم السيارة","Car name","Araç adı"],yr:["الموديل","Year","Model yılı"],
-ty:["النوع","Type","Tür"],pr:["السعر/يوم","Price/day","Günlük fiyat"],
-ph1:["رفع صورة","Upload photo","Fotoğraf yükle"],ph2:["تغيير الصورة","Change photo","Fotoğrafı değiştir"],
-svc:["صيانة","Service","Bakım"],back:["رجوع للخدمة","Back in service","Hizmete al"],del:["حذف","Delete","Sil"],
-setw:["واتساب المكتب (بكود الدولة)","Office WhatsApp (with country code)","Ofis WhatsApp (ülke kodlu)"],save:["حفظ","Save","Kaydet"],
-note:["البيانات محفوظة في هذا المتصفح فقط","Data is stored in this browser only","Veriler yalnızca bu tarayıcıda saklanır"],
-st_new:["جديد","New","Yeni"],st_confirmed:["مؤكد","Confirmed","Onaylı"],st_out:["مستلمة","Picked up","Teslim edildi"],st_returned:["مرتجعة","Returned","İade edildi"],st_cancelled:["ملغي","Cancelled","İptal"],
-ty_sedan:["سيدان","Sedan","Sedan"],ty_suv:["دفع رباعي","SUV","SUV"],ty_eco:["اقتصادية","Economy","Ekonomi"],
-sv_l:["الخدمة","Service","Hizmet"],m_self:["بدون سائق","Self-drive","Sürücüsüz"],m_driver:["مع سائق","With driver","Şoförlü"],m_wedding:["باقة الزفاف","Wedding package","Düğün paketi"],
-wb_h:["باقة الزفاف","Wedding package","Düğün paketi"],wb_p:["سيارة مزينة بالورد مع سائق طوال اليوم، بإضافة","Flower-decorated car with a chauffeur all day, add-on","Çiçekli süslü araç ve gün boyu şoför, ek ücret"],wb_b:["اختر الباقة","Choose package","Paketi seç"],
-sd:["السائقون والحضور","Drivers & attendance","Şoförler ve devam"],sf:["الحجوزات والسيارات","Bookings & fleet","Rezervasyon ve araçlar"],
-dr_h:["السائقون","Drivers","Şoförler"],dr_n:["اسم السائق","Driver name","Şoför adı"],cin:["تسجيل حضور","Check in","Giriş yap"],cout:["تسجيل انصراف","Check out","Çıkış yap"],
-d_in:["حاضر منذ","On duty since","Görevde, başlangıç"],d_done:["انتهى اليوم","Done today","Bugün bitti"],d_no:["لم يحضر بعد","Not in yet","Henüz gelmedi"],
-d_mo:["ساعات الشهر","Hours this month","Bu ayın saatleri"],lgt:["سجل الحضور","Attendance log","Devam kaydı"],nolog:["لا توجد سجلات","No records yet","Kayıt yok"],hh2:["ساعة","h","sa"],
-cfg_d:["أجر السائق / يوم","Driver fee / day","Şoför ücreti / gün"],cfg_w:["رسوم باقة الزفاف","Wedding package fee","Düğün paketi ücreti"],
-pin_n:["رقم سري جديد (4 أرقام أو أكثر)","New PIN (4+ digits)","Yeni PIN (en az 4 hane)"],pin_ok:["تم تغيير الرقم السري","PIN changed","PIN değiştirildi"],pin_s:["الرقم لازم يكون 4 أرقام أو أكثر","PIN must be at least 4 digits","PIN en az 4 haneli olmalı"],
-pay_h:["طرق الدفع","Payment methods","Ödeme yöntemleri"],pay_p:["محفظة إلكترونية أو إنستاباي على الرقم","E-wallet or InstaPay to","E-cüzdan veya InstaPay, numara:"],pay_n:["بعد التحويل أرسل صورة الإيصال على واتساب","After transferring, send the receipt on WhatsApp","Transferden sonra dekontu WhatsApp'tan gönderin"]};
-var seed={phone:PH,cars:[
-{id:1,name:'Toyota Corolla',year:2022,type:'sedan',price:800},{id:2,name:'Hyundai Elantra',year:2023,type:'sedan',price:900},
-{id:3,name:'Kia Sportage',year:2022,type:'suv',price:1300},{id:4,name:'Fiat Tipo',year:2021,type:'eco',price:650},
-{id:5,name:'Nissan Sunny',year:2021,type:'eco',price:600},{id:6,name:'Chevrolet Optra',year:2020,type:'eco',price:550},
-{id:7,name:'Hyundai Tucson',year:2023,type:'suv',price:1500},{id:8,name:'Mitsubishi Lancer',year:2022,type:'sedan',price:750}],bookings:[]};
-try{S=JSON.parse(localStorage.getItem(K))}catch(e){S=null}
-if(!S||!S.cars)S=seed;if(!S.phone)S.phone=PH;
-S.cfg=S.cfg||{drv:300,wed:3500};S.drivers=S.drivers||[{id:1,name:'Ahmed Hassan',phone:''},{id:2,name:'Mahmoud Ali',phone:''}];S.att=S.att||[];var at='f';
-try{L=+localStorage.getItem(K+'l')||0}catch(e){}
-function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
-function $(i){return document.getElementById(i)}
-function t(k){return T[k][L]}
-function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function tl(x){return T['ty_'+x]?t('ty_'+x):esc(x)}
-function cu(){return L?'EGP':'ج.م'}
-function busy(b){return b.status!=='returned'&&b.status!=='cancelled'}
-function days(a,b){return Math.max(1,Math.round((new Date(b)-new Date(a))/864e5))}
-function iso(d){return d.toISOString().slice(0,10)}
-function free(id,f,e){return !S.bookings.some(function(b){return b.car===id&&busy(b)&&b.from<e&&f<b.to})}
-function carOf(id){return S.cars.find(function(c){return c.id===id})}
-var t0=new Date();$('df').value=iso(t0);$('df').min=iso(t0);$('dt').value=iso(new Date(t0.getTime()+864e5));
+<div class="mobile-header">
+<h2>MONA</h2>
+<div>☰</div>
+</div>
 
-function setLang(i){
-  L=i;try{localStorage.setItem(K+'l',i)}catch(e){}
-  var h=document.documentElement;h.lang=['ar','en','tr'][i];h.dir=i?'ltr':'rtl';
-  document.querySelectorAll('[data-i]').forEach(function(e){e.textContent=t(e.dataset.i)});
-  document.querySelectorAll('[data-p]').forEach(function(e){e.placeholder=t(e.dataset.p)});
-  var b=$('lg').children;for(var j=0;j<3;j++)b[j].className=j===i?'on':'';
-  $('wa').href='https://wa.me/'+S.phone;tab(cur);
-}
-function tab(x){
-  cur=x;$('cust').hidden=$('hero').hidden=x!=='c';$('admin').hidden=x!=='a';
-  $('tc').className=x==='c'?'on':'';$('ta').className=x==='a'?'on':'';
-  if(x==='a')ra();else rc();
-}
-function rc(){
-  $('wbp').textContent=S.cfg.wed+' '+cu();
-  var f=$('df').value,e=$('dt').value,q=$('q').value.trim().toLowerCase(),bad=!f||!e||e<=f,n=bad?1:days(f,e),m=$('sv').value,
-  list=S.cars.filter(function(c){return !q||(c.name+' '+(T['ty_'+c.type]?T['ty_'+c.type][L]:c.type)).toLowerCase().indexOf(q)>-1});
-  if(!list.length){$('cars').innerHTML='<p class="mut">'+t('none')+'</p>';return}
-  $('cars').innerHTML=list.map(function(c){
-    var ok=!bad&&!c.off&&free(c.id,f,e);
-    return '<article class="car"><div class="ph">'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.name)+'">':CAR)+'<span class="pt">'+c.price+' '+cu()+' '+t('pd')+'</span></div>'
-    +'<div class="bd"><h3>'+esc(c.name)+'</h3><div><span class="chip">'+tl(c.type)+'</span><span class="chip">'+c.year+'</span></div>'
-    +'<div class="ft"><div><span class="st '+(ok?'g':'r')+'">'+(c.off?t('maint'):ok?t('avail'):t('busy'))+'</span><div class="mut">'+(bad?t('e_dates'):t('total')+': '+tot(c,n,m)+' '+cu())+'</div></div>'
-    +'<button class="btn" '+(ok?'':'disabled')+' onclick="book('+c.id+')">'+t('book')+'</button></div></div></article>';
-  }).join('');
-}
-function book(id){
-  sel=id;var c=carOf(id),f=$('df').value,e=$('dt').value,n=days(f,e),m=$('sv').value;
-  $('mbox').innerHTML='<h3>'+esc(c.name)+'</h3><div class="mut">'+t('m_'+m)+' — '+f+' → '+e+' ('+n+') — '+tot(c,n,m)+' '+cu()+'</div>'
-  +'<input id="bn" placeholder="'+t('name')+'"><input id="bp" type="tel" placeholder="'+t('phone')+'"><div id="berr" class="bad"></div>'
-  +'<div class="row"><button class="btn" onclick="confirmBook()">'+t('confirm')+'</button><button class="btn o" onclick="closeM()">'+t('cancel')+'</button></div>';
-  $('modal').className='modal show';
-}
-function closeM(){$('modal').className='modal'}
-function confirmBook(){
-  var nm=$('bn').value.trim(),p=$('bp').value.trim(),f=$('df').value,e=$('dt').value,c=carOf(sel);
-  if(nm.length<3||p.replace(/\D/g,'').length<10){$('berr').textContent=t('e_form');return}
-  if(!free(sel,f,e)){$('berr').textContent=t('e_taken');return}
-  S.bookings.push({id:Date.now(),car:sel,name:nm,phone:p,from:f,to:e,total:tot(c,days(f,e),$('sv').value),mode:$('sv').value,status:'new'});save();
-  var msg=encodeURIComponent('حجز جديد ('+T['m_'+$('sv').value][0]+'): '+c.name+' من '+f+' إلى '+e+' — '+nm+' — '+p);
-  $('mbox').innerHTML='<h3 class="ok">'+t('dh')+'</h3><p>'+t('dp')+'</p><p><b>'+t('pay_h')+'</b>: '+t('pay_p')+' <b class="num">+20 12 85977851</b><br>'+t('pay_n')+'</p><p><a class="btn" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/'+S.phone+'?text='+msg+'">'+t('wa')+'</a></p><button class="btn o" onclick="closeM();rc()">'+t('ok')+'</button>';
-}
-function ra(){
-  var A=$('admin');
-  if(!unlocked){A.innerHTML='<div class="card" style="max-width:340px"><h3>'+t('pin_h')+'</h3><input id="pin" type="password" placeholder="'+t('pin')+'"><p id="perr" class="bad"></p><button class="btn" onclick="login()">'+t('enter')+'</button></div>';return}
-  if(at==='d'){A.innerHTML=sub()+rd();return}
-  var act=S.bookings.filter(busy).length,out=S.bookings.filter(function(b){return b.status==='out'}).length,
-  rev=S.bookings.filter(function(b){return b.status==='out'||b.status==='returned'}).reduce(function(a,b){return a+b.total},0),
-  opts=S.cars.map(function(c){return '<option value="'+c.id+'">'+esc(c.name)+'</option>'}).join('');
-  A.innerHTML=sub()+'<div class="stats"><div class="card"><b>'+S.cars.length+'</b>'+t('s_cars')+'</div><div class="card"><b>'+out+'</b>'+t('s_out')+'</div><div class="card"><b>'+act+'</b>'+t('s_act')+'</div><div class="card"><b>'+rev+'</b>'+t('s_rev')+' ('+cu()+')</div></div>'
-  +'<h2>'+t('bk')+'</h2><div class="row"><input id="mn" placeholder="'+t('cn')+'"><input id="mp" type="tel" placeholder="'+t('phone')+'"><select id="mc">'+opts+'</select><select id="mm">'+MO()+'</select><input id="mf" type="date"><input id="mt" type="date"><button class="btn" onclick="addB()">'+t('addb')+'</button></div><div id="merr" class="bad"></div>'
-  +(S.bookings.length?'<div class="grid">'+S.bookings.slice().reverse().map(function(b){var c=carOf(b.car);
-    return '<div class="card"><b>'+esc(b.name)+'</b> <span class="mut">'+esc(b.phone)+'</span><div>'+(c?esc(c.name):'—')+'</div><div class="mut">'+t('m_'+(b.mode||'self'))+' — '+b.from+' → '+b.to+' — '+b.total+' '+cu()+'</div>'
-    +'<div class="row" style="margin:8px 0 0"><select onchange="setSt('+b.id+',this.value)">'+ST.map(function(s){return '<option value="'+s+'"'+(s===b.status?' selected':'')+'>'+t('st_'+s)+'</option>'}).join('')+'</select><button class="btn o d" onclick="delB('+b.id+')">'+t('del')+'</button></div></div>'}).join('')+'</div>':'<p class="mut">'+t('nob')+'</p>')
-  +'<h2>'+t('fleet')+'</h2><div class="row"><input id="cn" placeholder="'+t('carn')+'"><input id="cy" type="number" placeholder="'+t('yr')+'"><select id="ct"><option value="sedan">'+t('ty_sedan')+'</option><option value="suv">'+t('ty_suv')+'</option><option value="eco">'+t('ty_eco')+'</option></select><input id="cp" type="number" placeholder="'+t('pr')+'"><button class="btn" onclick="addCar()">'+t('add')+'</button></div>'
-  +S.cars.map(function(c){return '<div class="card fr"><span>'+(c.img?'<img src="'+c.img+'" alt="">':'')+'<b>'+esc(c.name)+'</b> <span class="mut">'+c.year+' / '+tl(c.type)+' / '+c.price+' '+cu()+'</span></span>'
-    +'<span><label class="btn o" style="cursor:pointer;display:inline-block">'+(c.img?t('ph2'):t('ph1'))+'<input type="file" accept="image/*" hidden onchange="upImg('+c.id+',this)"></label> <button class="btn o" onclick="togOff('+c.id+')">'+(c.off?t('back'):t('svc'))+'</button> <button class="btn o d" onclick="delC('+c.id+')">'+t('del')+'</button></span></div>'}).join('')
-  +'<h2>'+t('setw')+'</h2><div class="row"><input id="ph" value="'+esc(S.phone)+'"><button class="btn" onclick="setPh()">'+t('save')+'</button></div><div class="row"><label class="lb">'+t('cfg_d')+'<input id="cd" type="number" value="'+S.cfg.drv+'"></label><label class="lb">'+t('cfg_w')+'<input id="cw" type="number" value="'+S.cfg.wed+'"></label><button class="btn" onclick="setCfg()">'+t('save')+'</button></div><div class="row"><label class="lb">'+t('pin_n')+'<input id="np" type="password" inputmode="numeric"></label><button class="btn" onclick="setPin()">'+t('save')+'</button></div><div id="pmsg" class="mut"></div><p class="mut">'+t('note')+'</p>';
-}
-function upImg(id,inp){
-  var f=inp.files&&inp.files[0];if(!f)return;var r=new FileReader();
-  r.onload=function(){var im=new Image();im.onload=function(){
-    var w=Math.min(640,im.width),h=Math.round(im.height*w/im.width),cv=document.createElement('canvas');
-    cv.width=w;cv.height=h;cv.getContext('2d').drawImage(im,0,0,w,h);
-    carOf(id).img=cv.toDataURL('image/jpeg',0.72);save();ra();};im.src=r.result};
-  r.readAsDataURL(f);
-}
-function addB(){
-  var nm=$('mn').value.trim(),p=$('mp').value.trim(),id=+$('mc').value,f=$('mf').value,e=$('mt').value,c=carOf(id);
-  if(!nm||!c||!f||!e||e<=f){$('merr').textContent=t('fill');return}
-  if(!free(id,f,e)){$('merr').textContent=t('e_taken');return}
-  S.bookings.push({id:Date.now(),car:id,name:nm,phone:p,from:f,to:e,total:tot(c,days(f,e),$('mm').value),mode:$('mm').value,status:'confirmed'});save();ra();
-}
-function tot(c,n,m){return m==='driver'?(c.price+S.cfg.drv)*n:m==='wedding'?c.price*n+S.cfg.wed:c.price*n}
-function MO(){return ['self','driver','wedding'].map(function(k){return '<option value="'+k+'">'+t('m_'+k)+'</option>'}).join('')}
-function sub(){return '<div class="row"><button class="btn'+(at==='f'?'':' o')+'" onclick="sa(\'f\')">'+t('sf')+'</button><button class="btn'+(at==='d'?'':' o')+'" onclick="sa(\'d\')">'+t('sd')+'</button></div>'}
-function sa(x){at=x;ra()}
-function setCfg(){S.cfg.drv=+$('cd').value||0;S.cfg.wed=+$('cw').value||0;save();ra()}
-function hm(x){var d=new Date(x);return('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)}
-function ld(x){var d=new Date(x);return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
-function rd(){
-  var td=ld(Date.now()),mo=td.slice(0,7),
-  h='<h2>'+t('dr_h')+'</h2><div class="row"><input id="dn" placeholder="'+t('dr_n')+'"><input id="dp" type="tel" placeholder="'+t('phone')+'"><button class="btn" onclick="addD()">'+t('add')+'</button></div><div class="grid">';
-  h+=S.drivers.map(function(d){
-    var rs=S.att.filter(function(r){return r.drv===d.id}),op=rs.find(function(r){return !r.out}),dn=rs.some(function(r){return ld(r.in)===td}),
-    mh=rs.filter(function(r){return r.out&&ld(r.in).slice(0,7)===mo}).reduce(function(a,r){return a+r.out-r.in},0);
-    return '<div class="card"><b>'+esc(d.name)+'</b> <span class="mut">'+esc(d.phone||'')+'</span>'
-    +'<div class="st '+(op?'g':'r')+'">'+(op?t('d_in')+' '+hm(op.in):dn?t('d_done'):t('d_no'))+'</div>'
-    +'<div class="mut">'+t('d_mo')+': '+(mh/36e5).toFixed(1)+' '+t('hh2')+'</div>'
-    +'<div class="row" style="margin:8px 0 0"><button class="btn" '+(op?'disabled':'')+' onclick="chk('+d.id+',1)">'+t('cin')+'</button><button class="btn" '+(op?'':'disabled')+' onclick="chk('+d.id+',0)">'+t('cout')+'</button><button class="btn o d" onclick="delD('+d.id+')">'+t('del')+'</button></div></div>'}).join('')+'</div><h2>'+t('lgt')+'</h2>';
-  var lg=S.att.slice().reverse().slice(0,30);
-  return h+(lg.length?lg.map(function(r){var d=S.drivers.find(function(x){return x.id===r.drv});
-    return '<div class="card fr"><span><b>'+(d?esc(d.name):'—')+'</b> <span class="mut">'+ld(r.in)+'</span></span><span>'+hm(r.in)+' → '+(r.out?hm(r.out)+' ('+((r.out-r.in)/36e5).toFixed(1)+' '+t('hh2')+')':'…')+'</span></div>'}).join(''):'<p class="mut">'+t('nolog')+'</p>');
-}
-function chk(id,on){
-  if(on)S.att.push({id:Date.now(),drv:id,in:Date.now(),out:0});
-  else S.att.forEach(function(r){if(r.drv===id&&!r.out)r.out=Date.now()});
-  save();ra();
-}
-function addD(){var n=$('dn').value.trim();if(!n)return;S.drivers.push({id:Date.now(),name:n,phone:$('dp').value.trim()});save();ra()}
-function delD(id){S.drivers=S.drivers.filter(function(d){return d.id!==id});save();ra()}
-function setPin(){var v=$('np').value.trim();if(!/^\d{4,}$/.test(v)){$('pmsg').textContent=t('pin_s');return}S.pin=v;save();ra();$('pmsg').textContent=t('pin_ok')}
-function login(){if($('pin').value===(S.pin||PIN)){unlocked=true;ra()}else $('perr').textContent=t('pin_e')}
-function setSt(id,v){S.bookings.forEach(function(b){if(b.id===id)b.status=v});save();ra()}
-function delB(id){S.bookings=S.bookings.filter(function(b){return b.id!==id});save();ra()}
-function togOff(id){var c=carOf(id);c.off=!c.off;save();ra()}
-function delC(id){S.cars=S.cars.filter(function(c){return c.id!==id});save();ra()}
-function addCar(){var n=$('cn').value.trim(),p=+$('cp').value;if(!n||!p)return;
-  S.cars.push({id:Date.now(),name:n,year:+$('cy').value||'',type:$('ct').value,price:p});save();ra()}
-function setPh(){S.phone=$('ph').value.replace(/\D/g,'')||PH;save();$('wa').href='https://wa.me/'+S.phone;ra()}
-setLang(L);
-</script>
-</body>
-</html>
+<div class="container">
+
+<aside class="sidebar">
+<div class="logo">🎓 MONA</div>
+
+<ul class="menu">
+<li>🏠 الرئيسية</li>
+<li>👨‍🎓 الطلاب</li>
+<li>📚 المجموعات</li>
+<li>✅ الحضور</li>
+<li>📝 الاختبارات</li>
+<li>📖 المحتوى</li>
+<li>💰 المدفوعات</li>
+<li...
